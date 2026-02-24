@@ -100,3 +100,21 @@ Create an AI-native editing workspace where creators upload long-form content (Y
 - Average watch-time uplift on published videos.
 - Shorts conversion rate from long-form uploads.
 - Weekly active creators and export volume.
+
+## How to run an app prototype
+
+This repository does not include a full editing application implementation yet. To build and run an MVP app based on this plan, use this practical stack:
+
+1. **Frontend**: Next.js (timeline UI + real-time edit feed).
+2. **Backend API**: FastAPI or Node.js.
+3. **Workers**: Python jobs for transcription, highlight scoring, reframing, and rendering.
+4. **Media tooling**: FFmpeg for transcode/proxy/export.
+
+Minimal local flow:
+
+1. Start API server (`localhost:4000`).
+2. Start worker queue (Redis + worker process).
+3. Start web app (`localhost:3000`).
+4. Upload video and trigger AI edit job.
+5. Stream timeline updates to UI using WebSocket.
+
