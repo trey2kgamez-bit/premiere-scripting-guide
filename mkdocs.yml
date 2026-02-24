@@ -14,6 +14,7 @@ nav:
         - Overview: introduction/extendscript-overview.md
         - Changelog: introduction/changelog.md
         - How to Execute ExtendScript in Premiere Pro: introduction/how-to-execute-scripts.md
+        - AI Editing App Product Plan: introduction/ai-editing-app-product-plan.md
     - Application:
         - Application object: application/application.md
     - General:
