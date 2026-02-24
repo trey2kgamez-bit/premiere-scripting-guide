@@ -13,6 +13,7 @@ nav:
     - Introduction:
         - Overview: introduction/extendscript-overview.md
         - Changelog: introduction/changelog.md
+        - AI Streamer Editing Blueprint: introduction/ai-streamer-editing-blueprint.md
         - How to Execute ExtendScript in Premiere Pro: introduction/how-to-execute-scripts.md
     - Application:
         - Application object: application/application.md
