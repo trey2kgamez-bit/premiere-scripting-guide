@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>TreyAnalytics</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar">
+        <h1>TreyAnalytics</h1>
+        <p class="subtitle">Free YouTube Insights</p>
+        <nav>
+          <a href="#channel" class="nav-link active">Channel Analyzer</a>
+          <a href="#timing" class="nav-link">Best Time to Post</a>
+          <a href="#engagement" class="nav-link">Engagement</a>
+          <a href="#titles" class="nav-link">Title Analyzer</a>
+        </nav>
+      </aside>
+
+      <main class="content">
+        <header class="dashboard-header">
+          <h2>Channel Dashboard</h2>
+          <form id="channel-form">
+            <input
+              type="text"
+              id="channel-id"
+              placeholder="Enter YouTube Channel ID"
+              required
+            />
+            <button type="submit">Analyze</button>
+          </form>
+        </header>
+
+        <section class="cards" id="engagement">
+          <div class="card">
+            <h3>Average Engagement Rate</h3>
+            <p id="avg-engagement">--%</p>
+          </div>
+          <div class="card">
+            <h3>Total Videos Analyzed</h3>
+            <p id="total-videos">0</p>
+          </div>
+          <div class="card">
+            <h3>Best Posting Hours (UTC)</h3>
+            <ul id="best-hours"></ul>
+          </div>
+        </section>
+
+        <section class="chart-panel" id="timing">
+          <h3>Average Views by Hour Posted (UTC)</h3>
+          <canvas id="hour-chart"></canvas>
+        </section>
+
+        <section class="table-panel" id="channel">
+          <h3>Last 50 Videos</h3>
+          <div class="table-wrapper">
+            <table>
+              <thead>
+                <tr>
+                  <th>Title</th>
+                  <th>Views</th>
+                  <th>Likes</th>
+                  <th>Comments</th>
+                  <th>Publish Date</th>
+                  <th>Hour Posted (UTC)</th>
+                </tr>
+              </thead>
+              <tbody id="video-table-body"></tbody>
+            </table>
+          </div>
+        </section>
+
+        <section class="table-panel" id="titles">
+          <h3>Title Analyzer</h3>
+          <div class="table-wrapper">
+            <table>
+              <thead>
+                <tr>
+                  <th>Title</th>
+                  <th>Length</th>
+                  <th>Number</th>
+                  <th>Question Mark</th>
+                  <th>Emotional Word</th>
+                  <th>Score</th>
+                </tr>
+              </thead>
+              <tbody id="title-table-body"></tbody>
+            </table>
+          </div>
+        </section>
+
+        <p id="status"></p>
+      </main>
+    </div>
+
+    <script src="app.js"></script>
+  </body>
+</html>
